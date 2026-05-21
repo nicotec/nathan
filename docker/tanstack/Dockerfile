@@ -14,7 +14,7 @@ RUN \
 # =========================================
 FROM deps AS dev
 ENV NODE_ENV=development
-EXPOSE 3000
+EXPOSE 3010
 CMD \
   if [ -f pnpm-lock.yaml ]; then pnpm dev --host 0.0.0.0; \
   elif [ -f yarn.lock ]; then yarn dev --host 0.0.0.0; \
@@ -38,5 +38,5 @@ WORKDIR /app
 ENV NODE_ENV=production
 COPY --from=builder /app/.output ./.output
 COPY --from=builder /app/package.json ./package.json
-EXPOSE 3000
+EXPOSE 3010
 CMD ["node", ".output/server/index.mjs"]

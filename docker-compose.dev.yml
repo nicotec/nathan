@@ -2,8 +2,12 @@ services:
   nt-tanstack:
     build:
       target: dev
+    command: sh -c "if [ ! -d node_modules/vite ] || [ ! -x node_modules/@cloudflare/workerd-linux-64/bin/workerd ]; then npm install --include=optional; fi; npm run dev -- --host 0.0.0.0"
     environment:
       - NODE_ENV=development
     volumes:
       - ./projects/frontend:/app
-      - /app/node_modules
+      # - nt_tanstack_node_modules:/app/node_modules
+
+# volumes:
+  # nt_tanstack_node_modules:
