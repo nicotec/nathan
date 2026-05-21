@@ -1,0 +1,9 @@
+services:
+  nt-tanstack:
+    build:
+      target: dev
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./projects/frontend:/app
+      - /app/node_modules

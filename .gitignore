@@ -1,0 +1,25 @@
+# Docker
+postgres_data/
+
+# Symfony / PHP
+projects/api/var/cache/
+projects/api/var/log/
+projects/api/var/sessions/
+projects/api/.env.local
+projects/api/.env.*.local
+projects/api/vendor/
+
+# Node / Frontend
+projects/frontend/node_modules/
+projects/frontend/.output/
+projects/frontend/.vinxi/
+projects/frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
